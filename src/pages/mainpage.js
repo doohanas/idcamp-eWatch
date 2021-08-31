@@ -1,24 +1,23 @@
+import "../components/appBar.js";
+import "../components/searchBar.js";
 import DataSource from "../data/dataSource.js";
 
 const mainpage = () => {
-  const FormMovie = document.querySelector("#formMovie");
-  const searchMovie = document.querySelector("#searchMovie");
-  const searchButtonElement = document.querySelector("#searchButton");
+  const searchMovieList = document.querySelector("search-bar");
   const moviesList = document.querySelector("#moviesList");
 
-  const searchMovieList = async () => {
+  const handleSearchMovie = async () => {
     try {
-      const movie = await DataSource.searchMovie(searchMovie.value);
+      const movie = await DataSource.searchMovie(searchMovieList.value);
       render(movie);
-      console.log(movie);
     } catch (error) {
       alert(error);
     }
   };
 
-  const submitFormMovie = (event) => {
+   const handleSubmitForm = (event) => {
     event.preventDefault();
-    searchMovieList();
+    handleSearchMovie();
   };
 
   const render = (movies) => {
@@ -40,8 +39,9 @@ const mainpage = () => {
     });
   };
 
-  FormMovie.addEventListener("submit", submitFormMovie);
-  searchButtonElement.addEventListener("click", searchMovieList);
+
+  searchMovieList.clickEvent = handleSearchMovie;
+  searchMovieList.submitForm = handleSubmitForm;
 };
 
 export default mainpage;

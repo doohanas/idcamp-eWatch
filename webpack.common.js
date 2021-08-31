@@ -2,7 +2,7 @@ import { resolve } from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/app.js",
   output: {
     path: resolve(__dirname, "dist"),
     filename: "bundle.js",
