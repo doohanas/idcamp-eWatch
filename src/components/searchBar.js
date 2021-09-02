@@ -31,6 +31,7 @@ class SearchBar extends HTMLElement {
           id="searchMovieList"
           name="search"
           type="search"
+          required
         />
         <button
           id="searchButtonMovie"

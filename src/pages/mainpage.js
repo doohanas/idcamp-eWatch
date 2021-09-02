@@ -12,7 +12,7 @@ const mainpage = () => {
       const movie = await DataSource.searchMovie(searchMovieList.value);
       render(movie);
     } catch (error) {
-      alert(error);
+      alert("Sorry, check your movie once again");
     }
   };
 
