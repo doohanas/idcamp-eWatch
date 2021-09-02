@@ -14,8 +14,8 @@ class SearchBar extends HTMLElement {
   }
 
   set submitForm(event) {
-     this._submitForm = event;
-     this.render();
+    this._submitForm = event;
+    this.render();
   }
 
   get value() {

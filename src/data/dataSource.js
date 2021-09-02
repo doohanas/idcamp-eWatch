@@ -1,17 +1,19 @@
-import movies from "./movies.js";
+const axios = require("axios");
+import {API_KEY} from "../utils/index.js";
 
 class DataSource {
   static searchMovie(keyword) {
-    return new Promise((resolve, reject) => {
-      const showMovies = movies.filter((movie) =>
-        movie.title.toUpperCase().includes(keyword.toUpperCase())
-      );
-      if (showMovies.length) {
-        resolve(showMovies);
-      } else {
-        reject(`${keyword} is not found`);
-      }
-    });
+    return axios(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${keyword}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((responseJson) => {
+        if (responseJson.movies) {
+          return Promise.resolve(responseJson.movies);
+        } else {
+          return Promise.reject(`${keyword} IS NOT FOUND`);
+        }
+      });
   }
 }
 

@@ -1,14 +1,12 @@
-import { resolve } from "path";
+import path from ("path");
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 module.exports = {
   entry: "./src/app.js",
   output: {
-    path: resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
   },
-  devtool: "eval",
-  cache: "true",
   module: {
     rules: [
       {
@@ -46,7 +44,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
       filename: "index.html",
     }),
   ],

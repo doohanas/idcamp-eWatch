@@ -1,10 +1,11 @@
 import "../components/appBar.js";
 import "../components/searchBar.js";
+import "../components/movieList.js";
 import DataSource from "../data/dataSource.js";
 
 const mainpage = () => {
   const searchMovieList = document.querySelector("search-bar");
-  const moviesList = document.querySelector("#moviesList");
+  const moviesList = document.querySelector("movie-list");
 
   const handleSearchMovie = async () => {
     try {
@@ -15,30 +16,14 @@ const mainpage = () => {
     }
   };
 
-   const handleSubmitForm = (event) => {
+  const handleSubmitForm = (event) => {
     event.preventDefault();
     handleSearchMovie();
   };
 
   const render = (movies) => {
-    moviesList.innerHTML = "";
-    movies.map((movie) => {
-      const { title, year, poster } = movie;
-      const movieElement = document.createElement("div");
-      movieElement.setAttribute("class", "movie");
-
-      movieElement.innerHTML = `
-                <img class="movie_image" src=${poster} alt=${title}>
-                <div class="movie_info">
-                    <h3>${title}</h3>
-                    <p>${year}</p>
-                </div>
-            `;
-
-      moviesList.appendChild(movieElement);
-    });
+    moviesList.movies = movies;
   };
-
 
   searchMovieList.clickEvent = handleSearchMovie;
   searchMovieList.submitForm = handleSubmitForm;

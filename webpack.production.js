@@ -1,11 +1,10 @@
-import { merge } from "webpack-merge";
+import merge from "webpack-merge";
 import common from "./webpack.common.js";
 
-export default merge(common, {
+module.exports = merge(common, {
   mode: "production",
   module: {
     rules: [
-      /* babel loader */
       {
         test: /\.js$/,
         exclude: "/node_modules/",
