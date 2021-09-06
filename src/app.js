@@ -1,5 +1,6 @@
-import "regenerator-runtime"
-import "./components/appBar.js";
-import mainpage from "./pages/mainpage.js";
+import "regenerator-runtime";
+import "Styles/style.css";
+import "Components/appBar.js";
+import mainpage from "Pages/mainpage.js";
 
 document.addEventListener("DOMContentLoaded", mainpage);

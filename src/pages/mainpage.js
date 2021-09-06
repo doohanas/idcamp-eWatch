@@ -1,7 +1,7 @@
-import "../components/appBar.js";
-import "../components/searchBar.js";
-import "../components/movieList.js";
-import DataSource from "../data/dataSource.js";
+import "Components/appBar.js";
+import "Components/searchBar.js";
+import "Components/movieList.js";
+import DataSource from "Data/dataSource.js";
 
 const mainpage = () => {
   const searchMovieList = document.querySelector("search-bar");

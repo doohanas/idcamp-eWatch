@@ -11,7 +11,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["handlebars-loader", "style-loader", "css-loader"],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.html$/i,
@@ -48,4 +48,14 @@ module.exports = {
       filename: "index.html",
     }),
   ],
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, "src/components"),
+      Data: path.resolve(__dirname, "src/data"),
+      Styles: path.resolve(__dirname, "src/styles"),
+      Utils: path.resolve(__dirname, "src/utils"),
+      Assets: path.resolve(__dirname, "src/assets"),
+      Pages: path.resolve(__dirname, "src/pages"),
+    },
+  },
 };

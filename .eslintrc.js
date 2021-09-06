@@ -21,4 +21,11 @@ module.exports = {
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
   },
+ settings: {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  }
 };

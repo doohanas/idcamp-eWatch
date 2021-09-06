@@ -10,7 +10,7 @@ class MovieItem extends HTMLElement {
   }
 
   render() {
-    this.shadowDOM.innerHTML = `
+    this.shadowDOM.innerHTML = `   
          <img class="movie_image" src=${this._movie.Poster} alt=${this._movie.Title}>
             <div class="movie_info">
                 <h3>${this._movie.Title}</h3>

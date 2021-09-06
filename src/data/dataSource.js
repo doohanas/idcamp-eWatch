@@ -1,5 +1,5 @@
 const axios = require("axios");
-import { API_KEY } from "../utils/index.js";
+import { API_KEY } from "Utils/index.js";
 
 class DataSource {
   static searchMovie(keyword) {
