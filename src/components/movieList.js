@@ -13,16 +13,11 @@ class MovieList extends HTMLElement {
 
   render() {
     this.shadowDOM.innerHTML = "";
-    this._movies.map((movie) => {
+    this._movies.forEach((movie) => {
       const movieItemElement = document.createElement("movie-item");
       movieItemElement.movie = movie;
       this.shadowDOM.appendChild(movieItemElement);
     });
-  }
-
-  renderError() {
-    this.shadowDOM.innerHTML = "";
-    this.shadowDOM.innerHTML += `<h2 class="placeholder">Your Movies Not Found</h2>`;
   }
 }
 

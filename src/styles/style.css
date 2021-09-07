@@ -10,11 +10,10 @@ body {
 }
 
 header {
-  background-color: #087ac5;
+  background-color: #3db2ff;
 }
 
 main {
-  display: grid;
   margin: 32px auto;
 }
 
@@ -23,4 +22,8 @@ search-bar {
   text-align: center;
   width: 100%;
   padding: 15px;
+}
+
+movie-list {
+  margin-left: 50px;
 }
