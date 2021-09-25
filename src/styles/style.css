@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ffedda;
+}
+
+header {
+  background-color: #3db2ff;
+}
+
+main {
+  margin: 32px auto;
+}
+
+search-bar {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+}
+
+movie-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+movie-item {
+  width: 400px;
+}
