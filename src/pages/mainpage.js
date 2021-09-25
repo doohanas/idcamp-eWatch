@@ -9,7 +9,10 @@ const mainpage = () => {
 
   const handleSearchMovie = async () => {
     try {
-      const movie = await DataSource.searchMovie(searchMovieList.value);
+      const movie = await DataSource.searchMovie(
+        searchMovieList.valueTitle,
+        searchMovieList.valueYear
+      );
       render(movie);
     } catch (error) {
       alert("Sorry, check your movie once again");

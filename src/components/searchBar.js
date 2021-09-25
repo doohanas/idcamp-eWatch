@@ -18,8 +18,12 @@ class SearchBar extends HTMLElement {
     this.render();
   }
 
-  get value() {
+  get valueTitle() {
     return this.shadowDOM.querySelector("#search_movie_list").value;
+  }
+
+  get valueYear() {
+    return this.shadowDOM.querySelector("#search_movie_year").value;
   }
 
   render() {
@@ -31,7 +35,7 @@ class SearchBar extends HTMLElement {
         display: flex;
         justify-content: center;      
       }
-      #search_movie_list {
+      .search_movie {
         flex-direction: row;
         position: relative;
         width: 150px;
@@ -43,7 +47,7 @@ class SearchBar extends HTMLElement {
         border-radius: 5px;
         transition: width .5s ease-in-out;   
       }
-      #search_movie_list:focus {
+      .search_movie:focus {
         width: 250px;
       }
       #search_button_movie {
@@ -66,13 +70,21 @@ class SearchBar extends HTMLElement {
     </style>
 
     <form name="movie" id="form_movie" type="submit">
-      <label for="search"></label>
+      <label for="search_movie_list"></label>
       <input
-        placeholder="Search"
+        placeholder="Title..."
         id="search_movie_list"
+        class="search_movie"
         name="search"
-        type="search"
-        required
+        type="text"
+      />
+      <label for="search_movie_year"></label>
+      <input
+        placeholder="Year..."
+        id="search_movie_year"
+        class="search_movie"
+        name="movie"
+        type="text"
       />
       <button
         id="search_button_movie"
